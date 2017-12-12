@@ -4,12 +4,30 @@ import {increment} from '../actions/increment';
 import {decrement} from '../actions/decrement';
 import { bindActionCreators } from 'redux';
 
+const divStyle = {
+  textAlign: 'center',
+  marginTop: '20%',
+}
+
+const buttonIncrement = {
+  backgroundColor: 'Green',
+  padding: '15px 32px',
+  fontSize: '22px',
+}
+
+const buttonDecrement = {
+  backgroundColor: 'Red',
+  padding: '15px 32px',
+  fontSize: '22px',
+}
+
 class App extends React.Component {
   render() {
     return(
-      <div>Increment {this.props.value} Decrement<br />
-        <button onClick={() => this.props.increment()}>Increment</button>
-        <button onClick={() => this.props.decrement()}>Decrement</button>
+      <div style={divStyle}>
+        <h1>{this.props.value}</h1>
+        <button style={buttonIncrement} onClick={() => this.props.increment()}>Increment</button>
+        <button style={buttonDecrement} onClick={() => this.props.decrement()}>Decrement</button>
       </div>
     )
   }
